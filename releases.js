@@ -49,8 +49,6 @@
   async function init() {
     const downloadBtn = document.getElementById("hero-download");
     const metaEl = document.getElementById("hero-download-meta");
-    const versionEl = document.getElementById("hero-version");
-
     const release = await fetchLatestRelease();
     const macAsset = findMacAsset(release);
     const version = getVersion(release);
@@ -63,16 +61,13 @@
 
     if (metaEl && macAsset) {
       const parts = [];
-      if (version) parts.push("v" + version);
+      if (version) parts.push(version);
       if (macAsset.size) parts.push(readableSize(macAsset.size));
       metaEl.textContent = parts.join(" · ");
     } else if (metaEl && version) {
       metaEl.textContent = "v" + version;
     }
 
-    if (versionEl && version) {
-      versionEl.textContent = "v" + version;
-    }
   }
 
   document.addEventListener("DOMContentLoaded", init);

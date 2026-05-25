@@ -73,9 +73,96 @@
   </section>
 
   <section id="privacy">
-    <h2><span class="num">3</span> Privacy</h2>
-    <p>Gulliver operates entirely locally on your machine. The application does not collect, transmit, or store any personal data, location information, or usage analytics on external servers.</p>
-    <p>The application does not contain tracking code, telemetry, or analytics of any kind.</p>
+    <h2><span class="num">3</span> Privacy Policy</h2>
+    <p>This privacy policy explains what data Gulliver collects, why, and how it is handled. Gulliver is committed to GDPR compliance and data minimization.</p>
+
+    <h3 style="font-size:17px;font-weight:700;margin-top:24px;margin-bottom:8px;">3.1 — Data Controller</h3>
+    <p>Gulliver is developed and operated as an independent project. For privacy inquiries, contact <a href="mailto:hello@gulliver.app">hello@gulliver.app</a>.</p>
+
+    <h3 style="font-size:17px;font-weight:700;margin-top:24px;margin-bottom:8px;">3.2 — What Data Is Collected and Why</h3>
+    <p>Gulliver collects only the minimum data required for functionality. Nothing is collected for advertising, profiling, or resale.</p>
+
+    <p><strong>Authentication &amp; Account Data</strong> — When you create an account or sign in, your email address and an authentication credential (hashed password or OAuth token from Google/Apple) are stored by our authentication provider (Supabase). This is necessary for the performance of the contract (GDPR Art. 6(1)(b)): providing access to your trial and subscription.</p>
+
+    <p><strong>Machine Fingerprint</strong> — A one-way SHA256 hash derived from hardware identifiers (IOPlatformUUID, Mac model, serial number hash, MAC address hash) combined with a random local token is transmitted to our license server to validate trial eligibility and prevent abuse. This operates under legitimate interest (GDPR Art. 6(1)(f)): protecting the trial system from circumvention. The raw hardware identifiers never leave your device. The random local token stored at <code>~/.config/gulliver/.machine_id</code> can be deleted to reset the fingerprint (this will also reset your trial).</p>
+
+    <p><strong>Usage Counter</strong> — A simple counter of location changes is incremented server-side to track trial usage (10 free changes). The spoofed location coordinates themselves are <strong>never</strong> transmitted to our servers.</p>
+
+    <p><strong>Payment Data</strong> — Payments are processed entirely by Stripe. Gulliver never receives or stores your credit card number, CVC, or bank details. Stripe receives the information you provide during checkout and processes it under its own privacy policy. Gulliver only receives a subscription status confirmation (active/inactive, renewal date).</p>
+
+    <p><strong>Map &amp; Geocoding</strong> — When you search for an address, the search query is sent to OpenStreetMap's Nominatim geocoding service (operated by the OpenStreetMap Foundation). Map tiles are loaded from tile.openstreetmap.org. Your IP address is visible to these services as with any web request. On first launch, a single IP geolocation request to ipapi.co or ipinfo.io determines the initial map center. These services are subject to their respective privacy policies.</p>
+
+    <h3 style="font-size:17px;font-weight:700;margin-top:24px;margin-bottom:8px;">3.3 — What Stays on Your Device</h3>
+    <p>The following data is stored <strong>exclusively locally</strong> and never transmitted:</p>
+    <ul>
+      <li>Location history (coordinates you have spoofed)</li>
+      <li>Language and theme preferences</li>
+      <li>Application log files (sanitized — passwords, tokens, and UDIDs are redacted)</li>
+    </ul>
+
+    <h3 style="font-size:17px;font-weight:700;margin-top:24px;margin-bottom:8px;">3.4 — Data Retention</h3>
+    <ul>
+      <li><strong>Account data:</strong> Retained until you request deletion. Contact <a href="mailto:hello@gulliver.app">hello@gulliver.app</a>.</li>
+      <li><strong>Machine fingerprint:</strong> Retained for trial enforcement. Automatically deleted after 12 months of inactivity.</li>
+      <li><strong>Trial usage counter:</strong> Retained for trial enforcement. Deleted with account.</li>
+      <li><strong>Local data (history, preferences, logs):</strong> Stored only on your device. You can clear them anytime from the app Settings. Logs rotate automatically (1 MB limit, 5 backups).</li>
+    </ul>
+
+    <h3 style="font-size:17px;font-weight:700;margin-top:24px;margin-bottom:8px;">3.5 — Your Rights (GDPR)</h3>
+    <p>Under the General Data Protection Regulation, you have the right to:</p>
+    <ul>
+      <li><strong>Access</strong> — Request a copy of your personal data.</li>
+      <li><strong>Rectification</strong> — Correct inaccurate data.</li>
+      <li><strong>Erasure</strong> — Request deletion of your account and all associated data.</li>
+      <li><strong>Portability</strong> — Receive your data in a structured, machine-readable format.</li>
+      <li><strong>Objection</strong> — Object to processing based on legitimate interest.</li>
+      <li><strong>Complaint</strong> — Lodge a complaint with your local supervisory authority.</li>
+    </ul>
+    <p>To exercise any of these rights, contact <a href="mailto:hello@gulliver.app">hello@gulliver.app</a>. We will respond within 30 days.</p>
+
+    <h3 style="font-size:17px;font-weight:700;margin-top:24px;margin-bottom:8px;">3.6 — Cookies &amp; Local Storage</h3>
+    <p>The Gulliver desktop application uses localStorage to persist your language preference, theme (dark/light mode), and session tokens. These are technically necessary for the app to function and do not require consent under the ePrivacy Directive. The Gulliver website uses a single localStorage key (<code>gulliver_theme</code>) for dark mode persistence and a language preference key (<code>gulliver_lang</code>). No third-party cookies, tracking cookies, or analytics cookies are used.</p>
+
+    <h3 style="font-size:17px;font-weight:700;margin-top:24px;margin-bottom:8px;">3.7 — Third-Party Processors</h3>
+    <div class="processor-table" style="overflow-x:auto;margin:12px 0;">
+      <table style="width:100%;border-collapse:collapse;font-size:14px;">
+        <thead>
+          <tr style="border-bottom:1px solid var(--border);text-align:left;">
+            <th style="padding:8px 12px;">Processor</th>
+            <th style="padding:8px 12px;">Purpose</th>
+            <th style="padding:8px 12px;">Data Shared</th>
+            <th style="padding:8px 12px;">Location</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="border-bottom:1px solid var(--border);">
+            <td style="padding:8px 12px;">Supabase</td>
+            <td style="padding:8px 12px;">Authentication, license validation, trial tracking</td>
+            <td style="padding:8px 12px;">Email, password hash, machine fingerprint hash, usage counter</td>
+            <td style="padding:8px 12px;">EU (Frankfurt)</td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--border);">
+            <td style="padding:8px 12px;">Stripe</td>
+            <td style="padding:8px 12px;">Payment processing, subscription management</td>
+            <td style="padding:8px 12px;">Payment details, email (handled by Stripe; not stored by Gulliver)</td>
+            <td style="padding:8px 12px;">Global (see Stripe's privacy policy)</td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--border);">
+            <td style="padding:8px 12px;">OpenStreetMap / Nominatim</td>
+            <td style="padding:8px 12px;">Map tiles, address geocoding</td>
+            <td style="padding:8px 12px;">Search queries, IP address</td>
+            <td style="padding:8px 12px;">EU / UK</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3 style="font-size:17px;font-weight:700;margin-top:24px;margin-bottom:8px;">3.8 — Legal Basis Summary</h3>
+    <ul>
+      <li><strong>Contractual necessity (Art. 6(1)(b)):</strong> Email, password/OAuth for account creation and authentication; payment processing for subscriptions.</li>
+      <li><strong>Legitimate interest (Art. 6(1)(f)):</strong> Machine fingerprint for trial abuse prevention; usage counter for trial enforcement.</li>
+      <li><strong>User-controlled:</strong> Map searches, IP geolocation (triggered by your use of the map/search features).</li>
+    </ul>
   </section>
 
   <section id="licensing">

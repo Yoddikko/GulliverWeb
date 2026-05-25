@@ -1,0 +1,61 @@
+name: Bug Report
+description: Report a problem with Gulliver
+title: "[Bug] "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to report a bug. Please fill in the details below to help us diagnose the issue quickly.
+  - type: textarea
+    id: description
+    attributes:
+      label: Describe the bug
+      description: What happened? What did you expect to happen instead?
+      placeholder: A clear and concise description of the problem.
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      description: List the exact steps that led to the issue.
+      placeholder: |
+        1. Opened the app
+        2. Connected iPhone via USB
+        3. Clicked 'Authorize tunnel'
+        4. Observed the error
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+      description: What did you expect to happen?
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: Your system and app details.
+      placeholder: |
+        - macOS version:
+        - Gulliver version:
+        - iPhone model & iOS version:
+        - Connection method (USB/WiFi):
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Relevant logs or screenshots
+      description: |
+        If possible, export diagnostic logs from Gulliver (Settings → Diagnostic Logs → Export Log) and attach the file here.
+        Screenshots of the issue are also very helpful.
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Pre-submission checks
+      options:
+        - label: I have checked that Developer Mode is enabled on my iPhone
+        - label: I have tried reconnecting the USB cable
+        - label: I have restarted the app

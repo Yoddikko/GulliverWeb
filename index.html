@@ -1,0 +1,885 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Gulliver — GPS Location Spoofer for iPhone</title>
+  <meta name="description" content="Spoof your iPhone GPS location from your Mac via USB. No jailbreak required." />
+  <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="48x48" href="img/favicon-48.png" />
+  <link rel="stylesheet" href="styles.css?v=2" />
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a class="brand" href="/">
+      <img src="img/logo.png" alt="Gulliver" class="brand-img" width="32" height="32" />
+      <span class="brand-name">Gulliver</span>
+    </a>
+    <div class="header-actions">
+      <select class="lang-switch" id="lang-switch" aria-label="Select language">
+        <option value="en">English</option>
+        <option value="it">Italiano</option>
+        <option value="es">Español</option>
+        <option value="fr">Français</option>
+        <option value="de">Deutsch</option>
+        <option value="pt">Português</option>
+        <option value="ru">Русский</option>
+        <option value="zh">简体中文</option>
+        <option value="ja">日本語</option>
+        <option value="ko">한국어</option>
+        <option value="ar">العربية</option>
+        <option value="hi">हिन्दी</option>
+        <option value="tr">Türkçe</option>
+        <option value="nl">Nederlands</option>
+        <option value="pl">Polski</option>
+        <option value="sv">Svenska</option>
+        <option value="th">ไทย</option>
+        <option value="vi">Tiếng Việt</option>
+      </select>
+      <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+        <svg class="icon-dark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        <svg class="icon-light" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-content">
+      <img src="img/logo.png" alt="Gulliver" class="hero-logo" width="96" height="96" />
+      <h1 data-i18n="hero_title">GPS Location Spoofer <span class="hero-highlight">for iPhone</span></h1>
+      <p class="hero-desc" data-i18n="hero_desc">
+        Spoof your iPhone's GPS location from your Mac via USB.<br />
+        No jailbreak. No cloud. Just works.
+      </p>
+
+      <div class="hero-actions">
+        <a class="btn-download" href="#" id="hero-download">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+            <polyline points="7 10 12 15 17 10"/>
+            <line x1="12" y1="15" x2="12" y2="3"/>
+          </svg>
+          <span class="dl-text">
+            <span class="dl-label" data-i18n="download_macos">Download for macOS</span>
+            <span class="dl-meta" id="hero-download-meta"></span>
+          </span>
+        </a>
+      </div>
+      <p class="hero-version" id="hero-version"></p>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section class="features">
+    <h2 data-i18n="features_title">Why Gulliver</h2>
+    <div class="features-grid">
+
+      <article class="feature-card">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            <path d="M9 12l2 2 4-4"/>
+          </svg>
+        </div>
+        <h3 data-i18n="feat_1_title">Set &amp; Forget</h3>
+        <p data-i18n="feat_1_desc">GPS spoof persists through USB disconnects. No need to keep your Mac connected after applying.</p>
+      </article>
+
+      <article class="feature-card">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="7" width="20" height="14" rx="3" />
+            <path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/>
+            <path d="M12 12v4"/>
+          </svg>
+        </div>
+        <h3 data-i18n="feat_2_title">USB Connection</h3>
+        <p data-i18n="feat_2_desc">Connect your iPhone via USB cable. No jailbreak, no complex setup, no cloud dependency.</p>
+      </article>
+
+      <article class="feature-card">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"/>
+            <path d="M12 6v6l4 2"/>
+          </svg>
+        </div>
+        <h3 data-i18n="feat_3_title">Instant Apply</h3>
+        <p data-i18n="feat_3_desc">Your iPhone shows the spoofed location immediately after clicking apply. No delay.</p>
+      </article>
+
+      <article class="feature-card">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+          </svg>
+        </div>
+        <h3 data-i18n="feat_4_title">iOS 26.4 Ready</h3>
+        <p data-i18n="feat_4_desc">Verified working on the latest iOS 26.4 release. Updated regularly for new iOS versions.</p>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="how">
+    <h2 data-i18n="how_title">How It Works</h2>
+    <div class="steps">
+
+      <div class="step">
+        <div class="step-num">1</div>
+        <h3 data-i18n="step_1_title">Connect iPhone</h3>
+        <p data-i18n="step_1_desc">Plug your iPhone into your Mac via USB. Enable Developer Mode on the device.</p>
+      </div>
+
+      <div class="step">
+        <div class="step-num">2</div>
+        <h3 data-i18n="step_2_title">Authorize Tunnel</h3>
+        <p data-i18n="step_2_desc">Gulliver uses Apple's CoreDevice tunnel to establish a secure developer connection.</p>
+      </div>
+
+      <div class="step">
+        <div class="step-num">3</div>
+        <h3 data-i18n="step_3_title">Pick a Location</h3>
+        <p data-i18n="step_3_desc">Search for any place on the map or enter coordinates. Pinpoint where you want to be.</p>
+      </div>
+
+      <div class="step">
+        <div class="step-num">4</div>
+        <h3 data-i18n="step_4_title">Apply &amp; Done</h3>
+        <p data-i18n="step_4_desc">Click apply. The spoof persists until you reset your iPhone radios or reboot.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- COMPATIBILITY -->
+  <section class="compatibility">
+    <h2 data-i18n="compat_title">iOS Compatibility</h2>
+    <p class="compat-sub" data-i18n="compat_sub">Gulliver relies on Apple's DVT protocol. Future iOS updates may affect functionality.</p>
+
+    <table class="compat-table">
+      <thead>
+        <tr><th data-i18n="compat_ver">iOS Version</th><th data-i18n="compat_status">Status</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>iOS 26.4</td><td><span class="status-ok" data-i18n="working">Working</span></td></tr>
+        <tr><td>iOS 26.3</td><td><span class="status-ok" data-i18n="working">Working</span></td></tr>
+        <tr><td>iOS 26.2</td><td><span class="status-ok" data-i18n="working">Working</span></td></tr>
+        <tr><td>iOS &le; 26.1</td><td><span class="status-unknown" data-i18n="not_tested">Not tested</span></td></tr>
+      </tbody>
+    </table>
+
+    <p class="compat-note" data-i18n="compat_note">Last verified: May 2026 &middot; Future iOS updates may break functionality.</p>
+  </section>
+
+  <!-- KO-FI -->
+  <section class="kofi">
+    <div class="kofi-card">
+      <div class="kofi-icon">
+        <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
+          <path d="M23.881 8.948c-.773-4.085-4.859-4.593-4.859-4.593H.723c-.604 0-.679.798-.679.798s-.082 7.324-.022 11.822c.164 2.424 2.586 2.672 2.586 2.672s8.267-.023 11.966-.049c2.438-.426 2.683-2.566 2.658-3.734 4.352.24 7.422-2.831 6.649-6.916zm-11.062 3.511c-1.246 1.453-4.011 3.976-4.011 3.976s-.121.119-.31.023c-.076-.057-.108-.09-.108-.09-.443-.441-3.368-3.049-4.034-3.954-.709-.965-1.041-2.7-.091-3.71.951-1.01 3.005-1.086 4.363.407 0 0 1.565-1.782 3.468-.963 1.904.82 1.832 3.011.723 4.311zm6.173.478c-.928.116-1.682.028-1.682.028V7.284h1.77s1.971.551 1.971 2.638c0 1.913-.985 2.667-2.059 3.015z"/>
+        </svg>
+      </div>
+      <p data-i18n="kofi_desc">Gulliver is actively developed and maintained. If you find it useful, consider supporting the project.</p>
+      <a class="kofi-btn" href="https://ko-fi.com/yodddd" target="_blank" rel="noopener" data-i18n="kofi_btn">Support on Ko-fi</a>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <span>&copy; <span id="year"></span> Gulliver</span>
+    <nav>
+      <a href="https://github.com/Yoddikko/Gulliver" target="_blank" rel="noopener" data-i18n="footer_github">GitHub</a>
+      <a href="legali.html" data-i18n="footer_legal">Legal</a>
+      <a href="mailto:hello@gulliver.app" data-i18n="footer_contact">Contact</a>
+    </nav>
+  </div>
+</footer>
+
+<script src="releases.js"></script>
+<script>
+document.getElementById('year').textContent = new Date().getFullYear();
+
+/* i18n */
+const I18N = {
+  en: {
+    hero_title: 'GPS Location Spoofer <span class="hero-highlight">for iPhone</span>',
+    hero_desc: 'Spoof your iPhone\'s GPS location from your Mac via USB.<br />No jailbreak. No cloud. Just works.',
+    download_macos: 'Download for macOS',
+    features_title: 'Why Gulliver',
+    feat_1_title: 'Set & Forget',
+    feat_1_desc: 'GPS spoof persists through USB disconnects. No need to keep your Mac connected after applying.',
+    feat_2_title: 'USB Connection',
+    feat_2_desc: 'Connect your iPhone via USB cable. No jailbreak, no complex setup, no cloud dependency.',
+    feat_3_title: 'Instant Apply',
+    feat_3_desc: 'Your iPhone shows the spoofed location immediately after clicking apply. No delay.',
+    feat_4_title: 'iOS 26.4 Ready',
+    feat_4_desc: 'Verified working on the latest iOS 26.4 release. Updated regularly for new iOS versions.',
+    how_title: 'How It Works',
+    step_1_title: 'Connect iPhone',
+    step_1_desc: 'Plug your iPhone into your Mac via USB. That\'s all you need.',
+    step_2_title: 'Launch Gulliver',
+    step_2_desc: 'Open the app. It detects your device and gets everything ready automatically.',
+    step_3_title: 'Pick a Location',
+    step_3_desc: 'Search for any place on the map or drop a pin anywhere in the world.',
+    step_4_title: 'Apply',
+    step_4_desc: 'One click and your iPhone is there. Simple as that.',
+    compat_title: 'iOS Compatibility',
+    compat_sub: 'Gulliver relies on Apple\'s DVT protocol. Future iOS updates may affect functionality.',
+    compat_ver: 'iOS Version',
+    compat_status: 'Status',
+    working: 'Working',
+    not_tested: 'Not tested',
+    compat_note: 'Last verified: May 2026 · Future iOS updates may break functionality.',
+    kofi_desc: 'Gulliver is actively developed and maintained. If you find it useful, consider supporting the project.',
+    kofi_btn: 'Support on Ko-fi',
+    footer_github: 'GitHub',
+    footer_legal: 'Legal',
+    footer_contact: 'Contact'
+  },
+  it: {
+    hero_title: 'GPS Location Spoofer <span class="hero-highlight">per iPhone</span>',
+    hero_desc: 'Simula la posizione GPS del tuo iPhone dal Mac via USB.<br />Nessun jailbreak. Nessun cloud. Funziona e basta.',
+    download_macos: 'Scarica per macOS',
+    features_title: 'Perché Gulliver',
+    feat_1_title: 'Set & Forget',
+    feat_1_desc: 'Lo spoof persiste anche dopo aver scollegato USB. Non serve tenere il Mac connesso.',
+    feat_2_title: 'Connessione USB',
+    feat_2_desc: 'Collega il tuo iPhone via cavo USB. Nessun jailbreak, nessuna configurazione complessa.',
+    feat_3_title: 'Applicazione Istantanea',
+    feat_3_desc: 'Il tuo iPhone mostra la posizione falsa immediatamente dopo aver cliccato applica.',
+    feat_4_title: 'Compatibile iOS 26.4',
+    feat_4_desc: 'Verificato e funzionante su iOS 26.4. Aggiornato regolarmente per le nuove versioni.',
+    how_title: 'Come Funziona',
+    step_1_title: 'Collega iPhone',
+    step_1_desc: 'Collega il tuo iPhone al Mac via USB. Tutto qui.',
+    step_2_title: 'Avvia Gulliver',
+    step_2_desc: 'Apri l\'app. Rileva il dispositivo e prepara tutto automaticamente.',
+    step_3_title: 'Scegli Posizione',
+    step_3_desc: 'Cerca un posto sulla mappa o clicca in qualsiasi punto del mondo.',
+    step_4_title: 'Applica',
+    step_4_desc: 'Un clic e il tuo iPhone è lì. Semplice.',
+    compat_title: 'Compatibilità iOS',
+    compat_sub: 'Gulliver si basa sul protocollo DVT di Apple. Futuri aggiornamenti iOS potrebbero influire sul funzionamento.',
+    compat_ver: 'Versione iOS',
+    compat_status: 'Stato',
+    working: 'Funzionante',
+    not_tested: 'Non testato',
+    compat_note: 'Ultima verifica: Maggio 2026 · Futuri aggiornamenti iOS potrebbero rompere la funzionalità.',
+    kofi_desc: 'Gulliver è sviluppato e mantenuto attivamente. Se lo trovi utile, considera di supportare il progetto.',
+    kofi_btn: 'Supporta su Ko-fi',
+    footer_github: 'GitHub',
+    footer_legal: 'Legale',
+    footer_contact: 'Contattaci'
+  },
+  es: {
+    hero_title: 'Simulador de GPS <span class="hero-highlight">para iPhone</span>',
+    hero_desc: 'Suplanta la ubicación GPS de tu iPhone desde tu Mac vía USB.<br />Sin jailbreak. Sin nube. Simplemente funciona.',
+    download_macos: 'Descargar para macOS',
+    features_title: 'Por qué Gulliver',
+    feat_1_title: 'Set & Forget',
+    feat_1_desc: 'La suplantación GPS persiste incluso al desconectar el USB. No necesitas mantener tu Mac conectado tras aplicar.',
+    feat_2_title: 'Conexión USB',
+    feat_2_desc: 'Conecta tu iPhone mediante cable USB. Sin jailbreak, sin configuración compleja, sin dependencia en la nube.',
+    feat_3_title: 'Aplicación Instantánea',
+    feat_3_desc: 'Tu iPhone muestra la ubicación falsa inmediatamente después de hacer clic en Aplicar. Sin demora.',
+    feat_4_title: 'Compatible con iOS 26.4',
+    feat_4_desc: 'Verificado y funcionando en la última versión iOS 26.4. Actualizado periódicamente para nuevas versiones de iOS.',
+    how_title: 'Cómo Funciona',
+    step_1_title: 'Conectar iPhone',
+    step_1_desc: 'Conecta tu iPhone al Mac vía USB. Eso es todo lo que necesitas.',
+    step_2_title: 'Iniciar Gulliver',
+    step_2_desc: 'Abre la aplicación. Detecta tu dispositivo y prepara todo automáticamente.',
+    step_3_title: 'Elige una Ubicación',
+    step_3_desc: 'Busca cualquier lugar en el mapa o coloca un pin en cualquier parte del mundo.',
+    step_4_title: 'Aplicar',
+    step_4_desc: 'Un clic y tu iPhone está allí. Así de simple.',
+    compat_title: 'Compatibilidad con iOS',
+    compat_sub: 'Gulliver utiliza el protocolo DVT de Apple. Las futuras actualizaciones de iOS podrían afectar la funcionalidad.',
+    compat_ver: 'Versión de iOS',
+    compat_status: 'Estado',
+    working: 'Funcionando',
+    not_tested: 'No probado',
+    compat_note: 'Última verificación: Mayo 2026 · Futuras actualizaciones de iOS podrían romper la funcionalidad.',
+    kofi_desc: 'Gulliver se desarrolla y mantiene activamente. Si te resulta útil, considera apoyar el proyecto.',
+    kofi_btn: 'Apoyar en Ko-fi',
+    footer_github: 'GitHub',
+    footer_legal: 'Aviso Legal',
+    footer_contact: 'Contacto'
+  },
+  fr: {
+    hero_title: 'Simulateur de GPS <span class="hero-highlight">pour iPhone</span>',
+    hero_desc: 'Simulez la position GPS de votre iPhone depuis votre Mac via USB.<br />Sans jailbreak. Sans cloud. Ça marche.',
+    download_macos: 'Télécharger pour macOS',
+    features_title: 'Pourquoi Gulliver',
+    feat_1_title: 'Set & Forget',
+    feat_1_desc: 'La simulation GPS persiste même après débranchement USB. Inutile de garder votre Mac connecté après application.',
+    feat_2_title: 'Connexion USB',
+    feat_2_desc: 'Connectez votre iPhone via câble USB. Sans jailbreak, sans configuration complexe, sans dépendance au cloud.',
+    feat_3_title: 'Application Instantanée',
+    feat_3_desc: 'Votre iPhone affiche la position simulée immédiatement après avoir cliqué sur Appliquer. Aucun délai.',
+    feat_4_title: 'Prêt pour iOS 26.4',
+    feat_4_desc: 'Vérifié et fonctionnel sur la dernière version iOS 26.4. Mis à jour régulièrement pour les nouvelles versions iOS.',
+    how_title: 'Comment ça Marche',
+    step_1_title: 'Connecter l’iPhone',
+    step_1_desc: 'Branchez votre iPhone à votre Mac via USB. C’est tout ce qu’il faut.',
+    step_2_title: 'Lancer Gulliver',
+    step_2_desc: 'Ouvrez l’application. Elle détecte votre appareil et prépare tout automatiquement.',
+    step_3_title: 'Choisir un Lieu',
+    step_3_desc: 'Cherchez n’importe quel endroit sur la carte ou placez une épingle où vous voulez.',
+    step_4_title: 'Appliquer',
+    step_4_desc: 'Un clic et votre iPhone y est. Aussi simple que ça.',
+    compat_title: 'Compatibilité iOS',
+    compat_sub: 'Gulliver repose sur le protocole DVT d’Apple. Les futures mises à jour iOS pourraient affecter le fonctionnement.',
+    compat_ver: 'Version iOS',
+    compat_status: 'Statut',
+    working: 'Fonctionne',
+    not_tested: 'Non testé',
+    compat_note: 'Dernière vérification : Mai 2026 · Les futures mises à jour iOS pourraient casser la fonctionnalité.',
+    kofi_desc: 'Gulliver est activement développé et maintenu. Si vous le trouvez utile, envisagez de soutenir le projet.',
+    kofi_btn: 'Soutenir sur Ko-fi',
+    footer_github: 'GitHub',
+    footer_legal: 'Mentions Légales',
+    footer_contact: 'Contact'
+  },
+  de: {
+    hero_title: 'GPS-Standort-Spoofer <span class="hero-highlight">für iPhone</span>',
+    hero_desc: 'Spiele den GPS-Standort deines iPhones von deinem Mac via USB vor.<br />Kein Jailbreak. Keine Cloud. Einfach funktioniert’s.',
+    download_macos: 'Für macOS herunterladen',
+    features_title: 'Warum Gulliver',
+    feat_1_title: 'Set & Forget',
+    feat_1_desc: 'Der GPS-Spoof bleibt bestehen, selbst wenn USB getrennt wird. Kein Grund, deinen Mac nach dem Anwenden verbunden zu lassen.',
+    feat_2_title: 'USB-Verbindung',
+    feat_2_desc: 'Verbinde dein iPhone via USB-Kabel. Kein Jailbreak, keine komplexe Einrichtung, keine Cloud-Abhängigkeit.',
+    feat_3_title: 'Sofort Anwenden',
+    feat_3_desc: 'Dein iPhone zeigt den vorgetäuschten Standort sofort nach dem Klicken auf Anwenden. Keine Verzögerung.',
+    feat_4_title: 'Bereit für iOS 26.4',
+    feat_4_desc: 'Bestätigt funktionierend mit dem neuesten iOS 26.4. Regelmäßig aktualisiert für neue iOS-Versionen.',
+    how_title: 'Wie es Funktioniert',
+    step_1_title: 'iPhone Verbinden',
+    step_1_desc: 'Schließe dein iPhone via USB an deinen Mac an. Das ist alles, was du brauchst.',
+    step_2_title: 'Gulliver Starten',
+    step_2_desc: 'Öffne die App. Sie erkennt dein Gerät und bereitet alles automatisch vor.',
+    step_3_title: 'Standort Wählen',
+    step_3_desc: 'Suche nach einem Ort auf der Karte oder setze eine Markierung irgendwo auf der Welt.',
+    step_4_title: 'Anwenden',
+    step_4_desc: 'Ein Klick und dein iPhone ist dort. So einfach ist das.',
+    compat_title: 'iOS-Kompatibilität',
+    compat_sub: 'Gulliver basiert auf Apples DVT-Protokoll. Zukünftige iOS-Updates könnten die Funktionalität beeinträchtigen.',
+    compat_ver: 'iOS-Version',
+    compat_status: 'Status',
+    working: 'Funktioniert',
+    not_tested: 'Nicht getestet',
+    compat_note: 'Zuletzt geprüft: Mai 2026 · Zukünftige iOS-Updates könnten die Funktionalität beeinträchtigen.',
+    kofi_desc: 'Gulliver wird aktiv entwickelt und gewartet. Wenn du es nützlich findest, unterstütze das Projekt.',
+    kofi_btn: 'Auf Ko-fi unterstützen',
+    footer_github: 'GitHub',
+    footer_legal: 'Impressum',
+    footer_contact: 'Kontakt'
+  },
+  pt: {
+    hero_title: 'Falsificador de GPS <span class="hero-highlight">para iPhone</span>',
+    hero_desc: 'Falsifique a localização GPS do seu iPhone pelo Mac via USB.<br />Sem jailbreak. Sem nuvem. Simplesmente funciona.',
+    download_macos: 'Baixar para macOS',
+    features_title: 'Por que Gulliver',
+    feat_1_title: 'Set & Forget',
+    feat_1_desc: 'A falsificação GPS persiste mesmo após desconectar o USB. Não precisa manter o Mac conectado depois de aplicar.',
+    feat_2_title: 'Conexão USB',
+    feat_2_desc: 'Conecte seu iPhone via cabo USB. Sem jailbreak, sem configuração complexa, sem dependência de nuvem.',
+    feat_3_title: 'Aplicação Instantânea',
+    feat_3_desc: 'Seu iPhone mostra a localização falsa imediatamente após clicar em aplicar. Sem demora.',
+    feat_4_title: 'Pronto para iOS 26.4',
+    feat_4_desc: 'Verificado e funcionando na versão mais recente iOS 26.4. Atualizado regularmente para novas versões do iOS.',
+    how_title: 'Como Funciona',
+    step_1_title: 'Conectar iPhone',
+    step_1_desc: 'Conecte seu iPhone ao Mac via USB. Só isso que você precisa.',
+    step_2_title: 'Iniciar Gulliver',
+    step_2_desc: 'Abra o aplicativo. Ele detecta seu dispositivo e prepara tudo automaticamente.',
+    step_3_title: 'Escolher Local',
+    step_3_desc: 'Procure qualquer lugar no mapa ou solte um pino em qualquer lugar do mundo.',
+    step_4_title: 'Aplicar',
+    step_4_desc: 'Um clique e seu iPhone está lá. Simples assim.',
+    compat_title: 'Compatibilidade iOS',
+    compat_sub: 'Gulliver usa o protocolo DVT da Apple. Futuras atualizações do iOS podem afetar a funcionalidade.',
+    compat_ver: 'Versão iOS',
+    compat_status: 'Estado',
+    working: 'Funcionando',
+    not_tested: 'Não testado',
+    compat_note: 'Última verificação: Maio de 2026 · Futuras atualizações do iOS podem quebrar a funcionalidade.',
+    kofi_desc: 'O Gulliver é ativamente desenvolvido e mantido. Se você acha útil, considere apoiar o projeto.',
+    kofi_btn: 'Apoiar no Ko-fi',
+    footer_github: 'GitHub',
+    footer_legal: 'Legal',
+    footer_contact: 'Contato'
+  },
+  ru: {
+    hero_title: 'GPS Location Spoofer <span class="hero-highlight">для iPhone</span>',
+    hero_desc: 'Подмените GPS-координаты вашего iPhone с Mac через USB.<br />Без джейлбрейка. Без облака. Просто работает.',
+    download_macos: 'Скачать для macOS',
+    features_title: 'Почему Gulliver',
+    feat_1_title: 'Set & Forget',
+    feat_1_desc: 'Подмена GPS сохраняется даже после отключения USB. Не нужно держать Mac подключенным после применения.',
+    feat_2_title: 'Подключение по USB',
+    feat_2_desc: 'Подключите iPhone через USB-кабель. Без джейлбрейка, без сложной настройки, без облачной зависимости.',
+    feat_3_title: 'Мгновенное Применение',
+    feat_3_desc: 'iPhone показывает подменённую локацию сразу после нажатия кнопки. Без задержки.',
+    feat_4_title: 'Готово для iOS 26.4',
+    feat_4_desc: 'Проверено и работает на последней версии iOS 26.4. Регулярно обновляется для новых версий iOS.',
+    how_title: 'Как Это Работает',
+    step_1_title: 'Подключить iPhone',
+    step_1_desc: 'Подключите iPhone к Mac через USB. Это всё, что нужно.',
+    step_2_title: 'Запустить Gulliver',
+    step_2_desc: 'Откройте приложение. Оно обнаружит устройство и всё подготовит автоматически.',
+    step_3_title: 'Выбрать Место',
+    step_3_desc: 'Найдите любое место на карте или поставьте метку в любой точке мира.',
+    step_4_title: 'Применить',
+    step_4_desc: 'Один клик — и ваш iPhone там. Проще некуда.',
+    compat_title: 'Совместимость с iOS',
+    compat_sub: 'Gulliver использует протокол DVT от Apple. Будущие обновления iOS могут повлиять на функциональность.',
+    compat_ver: 'Версия iOS',
+    compat_status: 'Статус',
+    working: 'Работает',
+    not_tested: 'Не проверено',
+    compat_note: 'Последняя проверка: Май 2026 · Будущие обновления iOS могут нарушить работу.',
+    kofi_desc: 'Gulliver активно разрабатывается и поддерживается. Если вы находите его полезным, поддержите проект.',
+    kofi_btn: 'Поддержать на Ko-fi',
+    footer_github: 'GitHub',
+    footer_legal: 'Правовая информация',
+    footer_contact: 'Контакты'
+  },
+  zh: {
+    hero_title: 'GPS 位置模拟器 <span class="hero-highlight">适用于 iPhone</span>',
+    hero_desc: '通过 USB 从 Mac 模拟您 iPhone 的 GPS 位置。<br />无需越狱。无需云服务。简单有效。',
+    download_macos: '下载 macOS 版本',
+    features_title: '为什么选择 Gulliver',
+    feat_1_title: 'Set & Forget',
+    feat_1_desc: 'GPS 模拟在 USB 断开后仍然保持。应用后无需保持 Mac 连接。',
+    feat_2_title: 'USB 连接',
+    feat_2_desc: '通过 USB 线连接您的 iPhone。无需越狱，无需复杂设置，无需依赖云服务。',
+    feat_3_title: '即时应用',
+    feat_3_desc: '点击应用后，您的 iPhone 立即显示模拟位置。无需等待。',
+    feat_4_title: '兼容 iOS 26.4',
+    feat_4_desc: '经检验可在最新的 iOS 26.4 上正常运行。为新版 iOS 定期更新。',
+    how_title: '工作原理',
+    step_1_title: '连接 iPhone',
+    step_1_desc: '通过 USB 将 iPhone 连接到 Mac。仅此而已。',
+    step_2_title: '启动 Gulliver',
+    step_2_desc: '打开应用。它会自动检测您的设备并做好一切准备。',
+    step_3_title: '选择位置',
+    step_3_desc: '在地图上搜索任何地点，或在世界任何地方放置标记。',
+    step_4_title: '应用',
+    step_4_desc: '一键操作，您的 iPhone 即刻定位到那里。就这么简单。',
+    compat_title: 'iOS 兼容性',
+    compat_sub: 'Gulliver 基于 Apple 的 DVT 协议。未来的 iOS 更新可能会影响功能。',
+    compat_ver: 'iOS 版本',
+    compat_status: '状态',
+    working: '正常工作',
+    not_tested: '未经测试',
+    compat_note: '最后验证：2026 年 5 月 · 未来的 iOS 更新可能会导致功能失效。',
+    kofi_desc: 'Gulliver 正在积极开发和维护。如果您觉得它很有用，请考虑支持该项目。',
+    kofi_btn: '在 Ko-fi 上支持',
+    footer_github: 'GitHub',
+    footer_legal: '法律声明',
+    footer_contact: '联系我们'
+  },
+  ja: {
+    hero_title: 'GPS 位置情報スプーファー <span class="hero-highlight">iPhone 対応</span>',
+    hero_desc: 'Mac から USB 経由で iPhone の GPS 位置を偽装します。<br />脱獄不要。クラウド不要。ただ動作します。',
+    download_macos: 'macOS 版をダウンロード',
+    features_title: 'Gulliver を選ぶ理由',
+    feat_1_title: 'Set & Forget',
+    feat_1_desc: 'GPS 偽装は USB 切断後も持続します。適用後に Mac を接続したままにする必要はありません。',
+    feat_2_title: 'USB 接続',
+    feat_2_desc: 'USB ケーブルで iPhone を接続。脱獄不要、複雑な設定不要、クラウド依存なし。',
+    feat_3_title: '即時適用',
+    feat_3_desc: '適用をクリックすると、iPhone は即座に偽装位置を表示します。遅延なし。',
+    feat_4_title: 'iOS 26.4 対応',
+    feat_4_desc: '最新の iOS 26.4 での動作を確認済み。新しい iOS バージョンに定期的に対応。',
+    how_title: '仕組み',
+    step_1_title: 'iPhone を接続',
+    step_1_desc: 'USB 経由で iPhone を Mac に接続します。これだけです。',
+    step_2_title: 'Gulliver を起動',
+    step_2_desc: 'アプリを開きます。デバイスを検出し、すべてを自動的に準備します。',
+    step_3_title: '場所を選択',
+    step_3_desc: '地図上で任意の場所を検索するか、世界中のどこにでもピンをドロップします。',
+    step_4_title: '適用',
+    step_4_desc: 'ワンクリックで iPhone がその場所に。本当に簡単です。',
+    compat_title: 'iOS 互換性',
+    compat_sub: 'Gulliver は Apple の DVT プロトコルに依存しています。将来の iOS アップデートが機能に影響を与える可能性があります。',
+    compat_ver: 'iOS バージョン',
+    compat_status: 'ステータス',
+    working: '動作確認済み',
+    not_tested: '未テスト',
+    compat_note: '最終確認: 2026年5月 · 将来の iOS アップデートで機能しなくなる可能性があります。',
+    kofi_desc: 'Gulliver は積極的に開発・維持されています。役立つと感じたら、プロジェクトへのサポートをご検討ください。',
+    kofi_btn: 'Ko-fi でサポート',
+    footer_github: 'GitHub',
+    footer_legal: '法的情報',
+    footer_contact: 'お問い合わせ'
+  },
+  ko: {
+    hero_title: 'GPS 위치 스푸퍼 <span class="hero-highlight">iPhone용</span>',
+    hero_desc: 'Mac에서 USB를 통해 iPhone의 GPS 위치를 스푸핑합니다.<br />탈옥 불필요. 클라우드 불필요. 그냥 작동합니다.',
+    download_macos: 'macOS용 다운로드',
+    features_title: 'Gulliver를 선택해야 하는 이유',
+    feat_1_title: 'Set & Forget',
+    feat_1_desc: 'GPS 스푸핑은 USB 연결이 끊겨도 유지됩니다. 적용 후 Mac을 계속 연결해 둘 필요가 없습니다.',
+    feat_2_title: 'USB 연결',
+    feat_2_desc: 'USB 케이블로 iPhone을 연결하세요. 탈옥 불필요, 복잡한 설정 불필요, 클라우드 의존성 없습니다.',
+    feat_3_title: '즉시 적용',
+    feat_3_desc: '적용 버튼을 클릭하면 iPhone이 즉시 스푸핑된 위치를 표시합니다. 지연 없습니다.',
+    feat_4_title: 'iOS 26.4 지원',
+    feat_4_desc: '최신 iOS 26.4에서 작동 확인 완료. 새로운 iOS 버전에 맞추어 정기적으로 업데이트됩니다.',
+    how_title: '작동 방식',
+    step_1_title: 'iPhone 연결',
+    step_1_desc: 'USB로 iPhone을 Mac에 연결하세요. 그게 전부입니다.',
+    step_2_title: 'Gulliver 실행',
+    step_2_desc: '앱을 엽니다. 기기를 감지하고 모든 것을 자동으로 준비합니다.',
+    step_3_title: '위치 선택',
+    step_3_desc: '지도에서 원하는 장소를 검색하거나 세계 어디든 핀을 놓으세요.',
+    step_4_title: '적용',
+    step_4_desc: '한 번 클릭하면 iPhone이 그곳에 위치합니다. 정말 간단합니다.',
+    compat_title: 'iOS 호환성',
+    compat_sub: 'Gulliver는 Apple의 DVT 프로토콜을 사용합니다. 향후 iOS 업데이트는 기능에 영향을 줄 수 있습니다.',
+    compat_ver: 'iOS 버전',
+    compat_status: '상태',
+    working: '작동 중',
+    not_tested: '테스트되지 않음',
+    compat_note: '최종 확인: 2026년 5월 · 향후 iOS 업데이트로 기능이 작동하지 않을 수 있습니다.',
+    kofi_desc: 'Gulliver는 활발히 개발 및 유지관리되고 있습니다. 유용하게 사용하셨다면 프로젝트 지원을 고려해주세요.',
+    kofi_btn: 'Ko-fi에서 후원하기',
+    footer_github: 'GitHub',
+    footer_legal: '법적 고지',
+    footer_contact: '문의하기'
+  },
+  ar: {
+    hero_title: 'مزيف موقع GPS <span class="hero-highlight">لـ iPhone</span>',
+    hero_desc: 'قم بتزوير موقع GPS لجهاز iPhone الخاص بك من Mac عبر USB.<br />بدون كسر حماية. بدون سحابة. يعمل فحسب.',
+    download_macos: 'تنزيل لإصدار macOS',
+    features_title: 'لماذا Gulliver',
+    feat_1_title: 'Set & Forget',
+    feat_1_desc: 'يستمر تزوير GPS حتى عند فصل USB. لا حاجة لإبقاء Mac متصلاً بعد التطبيق.',
+    feat_2_title: 'اتصال USB',
+    feat_2_desc: 'قم بتوصيل iPhone عبر كابل USB. بدون كسر حماية، بدون إعداد معقد، بدون اعتماد على سحابة.',
+    feat_3_title: 'تطبيق فوري',
+    feat_3_desc: 'يظهر iPhone الموقع المزور فور النقر على تطبيق. بدون تأخير.',
+    feat_4_title: 'متوافق مع iOS 26.4',
+    feat_4_desc: 'تم التحقق من العمل على أحدث إصدار iOS 26.4. يتم التحديث بانتظام للإصدارات الجديدة.',
+    how_title: 'كيف يعمل',
+    step_1_title: 'توصيل iPhone',
+    step_1_desc: 'قم بتوصيل iPhone بجهاز Mac عبر USB. هذا كل ما تحتاجه.',
+    step_2_title: 'تشغيل Gulliver',
+    step_2_desc: 'افتح التطبيق. سيكتشف جهازك ويجهز كل شيء تلقائياً.',
+    step_3_title: 'اختيار موقع',
+    step_3_desc: 'ابحث عن أي مكان على الخريطة أو ضع دبوساً في أي مكان في العالم.',
+    step_4_title: 'تطبيق',
+    step_4_desc: 'نقرة واحدة وسيكون iPhone هناك. بهذه البساطة.',
+    compat_title: 'التوافق مع iOS',
+    compat_sub: 'يعتمد Gulliver على بروتوكول DVT من Apple. قد تؤثر تحديثات iOS المستقبلية على الوظائف.',
+    compat_ver: 'إصدار iOS',
+    compat_status: 'الحالة',
+    working: 'يعمل',
+    not_tested: 'لم يتم الاختبار',
+    compat_note: 'آخر تحقق: مايو 2026 · قد تؤدي تحديثات iOS المستقبلية إلى تعطل الوظيفة.',
+    kofi_desc: 'يتم تطوير وصيانة Gulliver بنشاط. إذا وجدته مفيداً، فكر في دعم المشروع.',
+    kofi_btn: 'دعم على Ko-fi',
+    footer_github: 'GitHub',
+    footer_legal: 'قانوني',
+    footer_contact: 'اتصل بنا'
+  },
+  hi: {
+    hero_title: 'GPS लॉकेशन स्पूफर <span class="hero-highlight">iPhone के लिए</span>',
+    hero_desc: 'USB के माध्यम से Mac से अपने iPhone का GPS स्थान स्पूफ करें।<br />कोई जेलब्रेक नहीं। कोई क्लाउड नहीं। बस काम करता है।',
+    download_macos: 'macOS के लिए डाउनलोड करें',
+    features_title: 'Gulliver क्यों',
+    feat_1_title: 'Set & Forget',
+    feat_1_desc: 'USB डिस्कनेक्ट होने पर भी GPS स्पूफ बना रहता है। लागू करने के बाद Mac को कनेक्टेड रखने की जरूरत नहीं।',
+    feat_2_title: 'USB कनेक्शन',
+    feat_2_desc: 'USB केबल के माध्यम से अपना iPhone कनेक्ट करें। कोई जेलब्रेक नहीं, कोई जटिल सेटअप नहीं, कोई क्लाउड निर्भरता नहीं।',
+    feat_3_title: 'तात्काल लागू करें',
+    feat_3_desc: 'लागू करने पर आपका iPhone तुरंत स्पूफ की गई लॉकेशन दिखाता है। कोई देरी नहीं।',
+    feat_4_title: 'iOS 26.4 के लिए तैयार',
+    feat_4_desc: 'नवीनतम iOS 26.4 पर काम करने की पुष्टि। नए iOS वर्जन के लिए नियमित रूप से अपडेट किया जाता है।',
+    how_title: 'यह कैसे काम करता है',
+    step_1_title: 'iPhone कनेक्ट करें',
+    step_1_desc: 'USB के माध्यम से अपने iPhone को Mac से कनेक्ट करें। बस इतना ही चाहिए।',
+    step_2_title: 'Gulliver लॉन्च करें',
+    step_2_desc: 'ऐप खोलें। यह आपके डिवाइस का पता लगाता है और सब कुछ अपने आप तैयार करता है।',
+    step_3_title: 'लॉकेशन चुनें',
+    step_3_desc: 'मानचित्र पर किसी भी स्थान को खोजें या दुनिया में कहीं भी पिन ड्रॉप करें।',
+    step_4_title: 'लागू करें',
+    step_4_desc: 'एक क्लिक और आपका iPhone वहाँ है। इतना सरल।',
+    compat_title: 'iOS संगतता',
+    compat_sub: 'Gulliver Apple के DVT प्रोटोकॉल पर निर्भर करता है। भविष्य के iOS अपडेट कार्यक्षमता को प्रभावित कर सकते हैं।',
+    compat_ver: 'iOS वर्जन',
+    compat_status: 'स्थिति',
+    working: 'काम कर रहा है',
+    not_tested: 'परीक्षण नहीं किया गया',
+    compat_note: 'अंतिम सत्यापन: मई 2026 · भविष्य के iOS अपडेट कार्यक्षमता को तोड़ सकते हैं।',
+    kofi_desc: 'Gulliver सक्रिय रूप से विकसित और अनुरक्षित किया जाता है। यदि आप इसे उपयोगी पाते हैं, तो परियोजना का समर्थन करने पर विचार करें।',
+    kofi_btn: 'Ko-fi पर समर्थन करें',
+    footer_github: 'GitHub',
+    footer_legal: 'कानूनी',
+    footer_contact: 'संपर्क'
+  },
+  tr: {
+    hero_title: 'GPS Konum Sahtekârı <span class="hero-highlight">iPhone için</span>',
+    hero_desc: 'Mac’inizden USB üzerinden iPhone’unuzun GPS konumunu taklit edin.<br />Jailbreak yok. Bulut yok. Sadece çalışır.',
+    download_macos: 'macOS için İndir',
+    features_title: 'Neden Gulliver',
+    feat_1_title: 'Set & Forget',
+    feat_1_desc: 'GPS taklidi USB bağlantısı kesildiğinde bile devam eder. Uyguladıktan sonra Mac’inizi bağlı tutmanız gerekmez.',
+    feat_2_title: 'USB Bağlantısı',
+    feat_2_desc: 'iPhone’unuzu USB kablosuyla bağlayın. Jailbreak yok, karmaşık kurulum yok, bulut bağımlılığı yok.',
+    feat_3_title: 'Anında Uygula',
+    feat_3_desc: 'iPhone’unuz uygula düğmesine tıkladıktan hemen sonra taklit konumu gösterir. Bekleme olmaz.',
+    feat_4_title: 'iOS 26.4 Uyumlu',
+    feat_4_desc: 'En son iOS 26.4 sürümünde çalıştığı doğrulandı. Yeni iOS sürümleri için düzenli olarak güncellenir.',
+    how_title: 'Nasıl Çalışır',
+    step_1_title: 'iPhone’u Bağlayın',
+    step_1_desc: 'iPhone’unuzu Mac’inize USB ile bağlayın. İhtiyacınız olan tek şey bu.',
+    step_2_title: 'Gulliver’ı Başlatın',
+    step_2_desc: 'Uygulamayı açın. Cihazınızı algılar ve her şeyi otomatik olarak hazırlar.',
+    step_3_title: 'Konum Seçin',
+    step_3_desc: 'Haritada herhangi bir yeri arayın veya dünyanın herhangi bir yerine işaret bırakın.',
+    step_4_title: 'Uygula',
+    step_4_desc: 'Bir tık ve iPhone’unuz orada. Bu kadar basit.',
+    compat_title: 'iOS Uyumluluğu',
+    compat_sub: 'Gulliver, Apple’ın DVT protokolünü kullanır. Gelecekteki iOS güncellemeleri işlevselliği etkileyebilir.',
+    compat_ver: 'iOS Sürümü',
+    compat_status: 'Durum',
+    working: 'Çalışıyor',
+    not_tested: 'Test edilmedi',
+    compat_note: 'Son doğrulama: Mayıs 2026 · Gelecekteki iOS güncellemeleri işlevselliği bozabilir.',
+    kofi_desc: 'Gulliver aktif olarak geliştirilmekte ve bakımı yapılmaktadır. İşinize yaradıysa, projeyi desteklemeyi düşünün.',
+    kofi_btn: 'Ko-fi’da Destekle',
+    footer_github: 'GitHub',
+    footer_legal: 'Yasal',
+    footer_contact: 'İletişim'
+  },
+  nl: {
+    hero_title: 'GPS-locatie Spoofer <span class="hero-highlight">voor iPhone</span>',
+    hero_desc: 'Spoof de GPS-locatie van je iPhone vanaf je Mac via USB.<br />Geen jailbreak. Geen cloud. Het werkt gewoon.',
+    download_macos: 'Downloaden voor macOS',
+    features_title: 'Waarom Gulliver',
+    feat_1_title: 'Set & Forget',
+    feat_1_desc: 'De GPS-spoof blijft behouden na het loskoppelen van USB. Je hoeft je Mac niet aangesloten te houden na het toepassen.',
+    feat_2_title: 'USB-verbinding',
+    feat_2_desc: 'Verbind je iPhone via USB-kabel. Geen jailbreak, geen complexe installatie, geen cloud-afhankelijkheid.',
+    feat_3_title: 'Direct Toepassen',
+    feat_3_desc: 'Je iPhone toont de gespoofde locatie onmiddellijk na het klikken op toepassen. Geen vertraging.',
+    feat_4_title: 'Klaar voor iOS 26.4',
+    feat_4_desc: 'Geverifieerd werkend op de nieuwste iOS 26.4. Regelmatig bijgewerkt voor nieuwe iOS-versies.',
+    how_title: 'Hoe Het Werkt',
+    step_1_title: 'iPhone Verbinden',
+    step_1_desc: 'Sluit je iPhone via USB aan op je Mac. Dat is alles wat je nodig hebt.',
+    step_2_title: 'Gulliver Starten',
+    step_2_desc: 'Open de app. Het detecteert je apparaat en bereidt alles automatisch voor.',
+    step_3_title: 'Locatie Kiezen',
+    step_3_desc: 'Zoek naar een plek op de kaart of plaats een pin waar ook ter wereld.',
+    step_4_title: 'Toepassen',
+    step_4_desc: 'Één klik en je iPhone is daar. Zo simpel is het.',
+    compat_title: 'iOS-compatibiliteit',
+    compat_sub: 'Gulliver maakt gebruik van Apple’s DVT-protocol. Toekomstige iOS-updates kunnen de functionaliteit beïnvloeden.',
+    compat_ver: 'iOS-versie',
+    compat_status: 'Status',
+    working: 'Werkt',
+    not_tested: 'Niet getest',
+    compat_note: 'Laatst geverifieerd: Mei 2026 · Toekomstige iOS-updates kunnen de functionaliteit verbreken.',
+    kofi_desc: 'Gulliver wordt actief ontwikkeld en onderhouden. Als je het nuttig vindt, overweeg dan om het project te steunen.',
+    kofi_btn: 'Steun op Ko-fi',
+    footer_github: 'GitHub',
+    footer_legal: 'Juridisch',
+    footer_contact: 'Contact'
+  },
+  pl: {
+    hero_title: 'GPS Location Spoofer <span class="hero-highlight">dla iPhone</span>',
+    hero_desc: 'Podmień lokalizację GPS swojego iPhone’a z Maca przez USB.<br />Bez jailbreaka. Bez chmury. Po prostu działa.',
+    download_macos: 'Pobierz na macOS',
+    features_title: 'Dlaczego Gulliver',
+    feat_1_title: 'Set & Forget',
+    feat_1_desc: 'Podmiana GPS utrzymuje się nawet po odłączeniu USB. Nie musisz trzymać Maca podłączonego po zastosowaniu.',
+    feat_2_title: 'Połączenie USB',
+    feat_2_desc: 'Podłącz iPhone’a kablem USB. Bez jailbreaka, bez skomplikowanej konfiguracji, bez zależności od chmury.',
+    feat_3_title: 'Natychmiastowe Zastosowanie',
+    feat_3_desc: 'Twój iPhone pokazuje podmienioną lokalizację natychmiast po kliknięciu Zastosuj. Bez opóźnień.',
+    feat_4_title: 'Gotowy na iOS 26.4',
+    feat_4_desc: 'Zweryfikowano działanie na najnowszym iOS 26.4. Regularnie aktualizowany dla nowych wersji iOS.',
+    how_title: 'Jak To Działa',
+    step_1_title: 'Podłącz iPhone’a',
+    step_1_desc: 'Podłącz iPhone’a do Maca przez USB. Tylko tyle potrzebujesz.',
+    step_2_title: 'Uruchom Gullivera',
+    step_2_desc: 'Otwórz aplikację. Wykryje twoje urządzenie i przygotuje wszystko automatycznie.',
+    step_3_title: 'Wybierz Lokalizację',
+    step_3_desc: 'Wyszukaj dowolne miejsce na mapie lub upuść pinezkę w dowolnym miejscu na świecie.',
+    step_4_title: 'Zastosuj',
+    step_4_desc: 'Jeden klik i twój iPhone jest tam. Tak prosto.',
+    compat_title: 'Zgodność z iOS',
+    compat_sub: 'Gulliver korzysta z protokołu DVT firmy Apple. Przyszłe aktualizacje iOS mogą wpłynąć na funkcjonalność.',
+    compat_ver: 'Wersja iOS',
+    compat_status: 'Stan',
+    working: 'Działa',
+    not_tested: 'Nietestowane',
+    compat_note: 'Ostatnia weryfikacja: Maj 2026 · Przyszłe aktualizacje iOS mogą zepsuć funkcjonalność.',
+    kofi_desc: 'Gulliver jest aktywnie rozwijany i utrzymywany. Jeśli uważasz go za przydatny, rozważ wsparcie projektu.',
+    kofi_btn: 'Wesprzyj na Ko-fi',
+    footer_github: 'GitHub',
+    footer_legal: 'Informacje prawne',
+    footer_contact: 'Kontakt'
+  },
+  sv: {
+    hero_title: 'GPS-platsförfalskare <span class="hero-highlight">för iPhone</span>',
+    hero_desc: 'Spoofa din iPhones GPS-position från din Mac via USB.<br />Ingen jailbreak. Inget moln. Det bara fungerar.',
+    download_macos: 'Ladda ner för macOS',
+    features_title: 'Varför Gulliver',
+    feat_1_title: 'Set & Forget',
+    feat_1_desc: 'GPS-spoofingen består även efter USB-frånkoppling. Du behöver inte hålla din Mac ansluten efter applicering.',
+    feat_2_title: 'USB-anslutning',
+    feat_2_desc: 'Anslut din iPhone via USB-kabel. Ingen jailbreak, ingen komplicerad installation, inget molnberoende.',
+    feat_3_title: 'Omedelbar Applicering',
+    feat_3_desc: 'Din iPhone visar den spoofade positionen omedelbart efter att du klickat på applicera. Ingen fördröjning.',
+    feat_4_title: 'Redo för iOS 26.4',
+    feat_4_desc: 'Bekräftat fungerande på senaste iOS 26.4. Uppdateras regelbundet för nya iOS-versioner.',
+    how_title: 'Hur Det Fungerar',
+    step_1_title: 'Anslut iPhone',
+    step_1_desc: 'Anslut din iPhone till din Mac via USB. Det är allt som behövs.',
+    step_2_title: 'Starta Gulliver',
+    step_2_desc: 'Öppna appen. Den identifierar din enhet och förbereder allt automatiskt.',
+    step_3_title: 'Välj en Plats',
+    step_3_desc: 'Sök efter en plats på kartan eller släpp en nål var som helst i världen.',
+    step_4_title: 'Applicera',
+    step_4_desc: 'Ett klick och din iPhone är där. Så enkelt är det.',
+    compat_title: 'iOS-kompatibilitet',
+    compat_sub: 'Gulliver använder Apples DVT-protokoll. Framtida iOS-uppdateringar kan påverka funktionaliteten.',
+    compat_ver: 'iOS-version',
+    compat_status: 'Status',
+    working: 'Fungerar',
+    not_tested: 'Inte testat',
+    compat_note: 'Senast verifierad: Maj 2026 · Framtida iOS-uppdateringar kan bryta funktionaliteten.',
+    kofi_desc: 'Gulliver utvecklas och underhålls aktivt. Om du finner det användbart, överväg att stödja projektet.',
+    kofi_btn: 'Stöd på Ko-fi',
+    footer_github: 'GitHub',
+    footer_legal: 'Juridisk information',
+    footer_contact: 'Kontakt'
+  },
+  th: {
+    hero_title: 'GPS Location Spoofer <span class="hero-highlight">สำหรับ iPhone</span>',
+    hero_desc: 'ปลอมแปลงตำแหน่ง GPS ของ iPhone จาก Mac ผ่าน USB<br />ไม่ต้องเจลเบรค ไม่ต้องใช้คลาวด์ แค่ใช้งานได้เลย',
+    download_macos: 'ดาวน์โหลดสำหรับ macOS',
+    features_title: 'ทำไมต้อง Gulliver',
+    feat_1_title: 'Set & Forget',
+    feat_1_desc: 'การปลอมแปลง GPS จะยังคงอยู่แม้ขณะตัดการเชื่อมต่อ USB ไม่จำเป็นต้องเชื่อมต่อ Mac ไว้หลังจากใช้งาน',
+    feat_2_title: 'การเชื่อมต่อ USB',
+    feat_2_desc: 'เชื่อมต่อ iPhone ของคุณผ่านสาย USB ไม่ต้องเจลเบรค ไม่ต้องตั้งค่าซับซ้อน ไม่พึ่งพาคลาวด์',
+    feat_3_title: 'ใช้งานทันที',
+    feat_3_desc: 'iPhone ของคุณจะแสดงตำแหน่งปลอมแปลงทันทีหลังจากคลิกใช้งาน ไม่มีความล่าช้า',
+    feat_4_title: 'พร้อมสำหรับ iOS 26.4',
+    feat_4_desc: 'ยืนยันการทำงานบน iOS 26.4 รุ่นล่าสุด อัปเดตอย่างสม่ำเสมอสำหรับ iOS รุ่นใหม่',
+    how_title: 'วิธีการทำงาน',
+    step_1_title: 'เชื่อมต่อ iPhone',
+    step_1_desc: 'เสียบ iPhone ของคุณเข้ากับ Mac ผ่าน USB เท่านั้นที่คุณต้องการ',
+    step_2_title: 'เปิด Gulliver',
+    step_2_desc: 'เปิดแอป มันจะตรวจจับอุปกรณ์ของคุณและเตรียมทุกอย่างโดยอัตโนมัติ',
+    step_3_title: 'เลือกตำแหน่ง',
+    step_3_desc: 'ค้นหาสถานที่ใดๆ บนแผนที่ หรือวางหมุดที่ใดก็ได้ในโลก',
+    step_4_title: 'ใช้งาน',
+    step_4_desc: 'คลิกเดียวและ iPhone ของคุณก็อยู่ที่นั่น ง่ายมาก',
+    compat_title: 'ความเข้ากันกับ iOS',
+    compat_sub: 'Gulliver ใช้โปรโตคอล DVT ของ Apple การอัพเดต iOS ในอนาคตอาจส่งผลต่อฟังก์ชัน',
+    compat_ver: 'รุ่น iOS',
+    compat_status: 'สถานะ',
+    working: 'ทำงานได้',
+    not_tested: 'ยังไม่ทดสอบ',
+    compat_note: 'ตรวจสอบล่าสุด: พฤษภาคม 2026 · การอัพเดต iOS ในอนาคตอาจทำให้ฟังก์ชันหยุดทำงาน',
+    kofi_desc: 'Gulliver ได้รับการพัฒนาและบำรุงรักษาอย่างต่อเนื่อง หากคุณพบว่ามันมีประโยชน์ โปรดพิจารณาสนับสนุนโครงการ',
+    kofi_btn: 'สนับสนุนบน Ko-fi',
+    footer_github: 'GitHub',
+    footer_legal: 'ข้อกฎหมาย',
+    footer_contact: 'ติดต่อ'
+  },
+  vi: {
+    hero_title: 'Trình giả mạo GPS <span class="hero-highlight">cho iPhone</span>',
+    hero_desc: 'Giả mạo vị trí GPS của iPhone từ máy Mac qua USB.<br />Không cần jailbreak. Không cần đám mây. Chỉ cần hoạt động.',
+    download_macos: 'Tải về cho macOS',
+    features_title: 'Tại sao chọn Gulliver',
+    feat_1_title: 'Set & Forget',
+    feat_1_desc: 'Giả mạo GPS vẫn duy trì ngay cả khi ngắt kết nối USB. Không cần giữ Mac kết nối sau khi áp dụng.',
+    feat_2_title: 'Kết nối USB',
+    feat_2_desc: 'Kết nối iPhone của bạn qua cáp USB. Không cần jailbreak, không cần cài đặt phức tạp, không phụ thuộc vào đám mây.',
+    feat_3_title: 'Áp dụng Tức thì',
+    feat_3_desc: 'iPhone của bạn hiển thị vị trí giả mạo ngay sau khi nhấn áp dụng. Không chậm trễ.',
+    feat_4_title: 'Sẵn sàng cho iOS 26.4',
+    feat_4_desc: 'Đã xác minh hoạt động trên iOS 26.4 mới nhất. Cập nhật thường xuyên cho các phiên bản iOS mới.',
+    how_title: 'Cách Hoạt Động',
+    step_1_title: 'Kết nối iPhone',
+    step_1_desc: 'Kết nối iPhone của bạn với Mac qua USB. Chỉ vậy thôi.',
+    step_2_title: 'Khởi chạy Gulliver',
+    step_2_desc: 'Mở ứng dụng. Nó sẽ tự động phát hiện thiết bị và chuẩn bị mọi thứ.',
+    step_3_title: 'Chọn Vị trí',
+    step_3_desc: 'Tìm kiếm bất kỳ địa điểm nào trên bản đồ hoặc thả pin ở bất kỳ đâu trên thế giới.',
+    step_4_title: 'Áp dụng',
+    step_4_desc: 'Một cú nhấp và iPhone của bạn ở đó. Đơn giản vậy thôi.',
+    compat_title: 'Tương thích iOS',
+    compat_sub: 'Gulliver dựa trên giao thức DVT của Apple. Các bản cập nhật iOS trong tương lai có thể ảnh hưởng đến chức năng.',
+    compat_ver: 'Phiên bản iOS',
+    compat_status: 'Trạng thái',
+    working: 'Đang hoạt động',
+    not_tested: 'Chưa kiểm tra',
+    compat_note: 'Xác minh lần cuối: Tháng 5 năm 2026 · Các bản cập nhật iOS trong tương lai có thể làm hỏng chức năng.',
+    kofi_desc: 'Gulliver đang được phát triển và bảo trì tích cực. Nếu bạn thấy nó hữu ích, hãy cân nhắc ủng hộ dự án.',
+    kofi_btn: 'Ủng hộ trên Ko-fi',
+    footer_github: 'GitHub',
+    footer_legal: 'Pháp lý',
+    footer_contact: 'Liên hệ'
+  }
+};
+
+let currentLang = (navigator.language || '').split('-')[0];
+if (!I18N[currentLang]) currentLang = 'en';
+try { const s = localStorage.getItem('gulliver_lang'); if (I18N[s]) currentLang = s; } catch(e) {}
+
+function applyLang(lang) {
+  currentLang = lang;
+  try { localStorage.setItem('gulliver_lang', lang); } catch(e) {}
+  document.documentElement.lang = lang;
+  document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+  document.getElementById('lang-switch').value = lang;
+
+  const strings = I18N[lang];
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.dataset.i18n;
+    const val = strings[key];
+    if (val !== undefined) el.innerHTML = val;
+  });
+}
+
+document.getElementById('lang-switch').addEventListener('change', function() {
+  applyLang(this.value);
+});
+
+/* Dark mode */
+const themeToggle = document.getElementById('theme-toggle');
+const storedTheme = localStorage.getItem('gulliver_theme');
+if (storedTheme === 'dark' || (!storedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+  document.documentElement.classList.add('dark');
+}
+themeToggle.addEventListener('click', () => {
+  const isDark = document.documentElement.classList.toggle('dark');
+  localStorage.setItem('gulliver_theme', isDark ? 'dark' : 'light');
+});
+
+/* Apply initial language */
+applyLang(currentLang);
+</script>
+
+</body>
+</html>

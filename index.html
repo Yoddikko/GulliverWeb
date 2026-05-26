@@ -3,10 +3,66 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Gulliver — GPS Location Spoofer for iPhone</title>
-  <meta name="description" content="Spoof your iPhone GPS location from your Mac via USB. Mac must stay connected. No jailbreak required." />
+
+  <!-- Primary SEO -->
+  <title>Gulliver — GPS Location Spoofer for iPhone | Change iOS GPS from Mac</title>
+  <meta name="description" content="Spoof your iPhone GPS location from your Mac via USB. Change GPS coordinates on any iOS device with Developer Mode enabled. No jailbreak required. Works with iOS 26.4. Mac must stay connected while spoofing." />
+  <meta name="keywords" content="iPhone GPS spoofer, fake GPS iPhone, spoof iPhone location, change iPhone GPS, iOS location spoofer, GPS location changer, iPhone location faker, macOS GPS tool, no jailbreak GPS spoof, simulate iPhone location" />
+  <meta name="author" content="Gulliver" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://gulliverapp.top/" />
+
+  <!-- Theme & Mobile -->
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#FAFAFA" />
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0F0F0F" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="apple-mobile-web-app-title" content="Gulliver" />
+
+  <!-- Icons -->
   <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32.png" />
   <link rel="icon" type="image/png" sizes="48x48" href="img/favicon-48.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="img/logo.png" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://gulliverapp.top/" />
+  <meta property="og:title" content="Gulliver — GPS Location Spoofer for iPhone" />
+  <meta property="og:description" content="Spoof your iPhone GPS location from your Mac via USB. No jailbreak required. Works with iOS 26.4. Mac must stay connected while spoofing." />
+  <meta property="og:image" content="https://gulliverapp.top/img/logo.png" />
+  <meta property="og:image:width" content="512" />
+  <meta property="og:image:height" content="512" />
+  <meta property="og:site_name" content="Gulliver" />
+  <meta property="og:locale" content="en_US" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:url" content="https://gulliverapp.top/" />
+  <meta name="twitter:title" content="Gulliver — GPS Location Spoofer for iPhone" />
+  <meta name="twitter:description" content="Spoof your iPhone GPS location from your Mac via USB. No jailbreak. Works with iOS 26.4." />
+  <meta name="twitter:image" content="https://gulliverapp.top/img/logo.png" />
+
+  <!-- Hreflang — language variants for search engines -->
+  <link rel="alternate" hreflang="en" href="https://gulliverapp.top/?lang=en" />
+  <link rel="alternate" hreflang="it" href="https://gulliverapp.top/?lang=it" />
+  <link rel="alternate" hreflang="es" href="https://gulliverapp.top/?lang=es" />
+  <link rel="alternate" hreflang="fr" href="https://gulliverapp.top/?lang=fr" />
+  <link rel="alternate" hreflang="de" href="https://gulliverapp.top/?lang=de" />
+  <link rel="alternate" hreflang="pt" href="https://gulliverapp.top/?lang=pt" />
+  <link rel="alternate" hreflang="ru" href="https://gulliverapp.top/?lang=ru" />
+  <link rel="alternate" hreflang="zh" href="https://gulliverapp.top/?lang=zh" />
+  <link rel="alternate" hreflang="ja" href="https://gulliverapp.top/?lang=ja" />
+  <link rel="alternate" hreflang="ko" href="https://gulliverapp.top/?lang=ko" />
+  <link rel="alternate" hreflang="ar" href="https://gulliverapp.top/?lang=ar" />
+  <link rel="alternate" hreflang="hi" href="https://gulliverapp.top/?lang=hi" />
+  <link rel="alternate" hreflang="tr" href="https://gulliverapp.top/?lang=tr" />
+  <link rel="alternate" hreflang="nl" href="https://gulliverapp.top/?lang=nl" />
+  <link rel="alternate" hreflang="pl" href="https://gulliverapp.top/?lang=pl" />
+  <link rel="alternate" hreflang="sv" href="https://gulliverapp.top/?lang=sv" />
+  <link rel="alternate" hreflang="th" href="https://gulliverapp.top/?lang=th" />
+  <link rel="alternate" hreflang="vi" href="https://gulliverapp.top/?lang=vi" />
+  <link rel="alternate" hreflang="x-default" href="https://gulliverapp.top/" />
+
   <link rel="stylesheet" href="styles.css?v=2" />
 </head>
 <body>
@@ -842,9 +898,17 @@ const I18N = {
   }
 };
 
-let currentLang = (navigator.language || '').split('-')[0];
-if (!I18N[currentLang]) currentLang = 'en';
-try { const s = localStorage.getItem('gulliver_lang'); if (I18N[s]) currentLang = s; } catch(e) {}
+/* Resolve language: URL param > localStorage > browser default > fallback to en */
+const urlParams = new URLSearchParams(window.location.search);
+const urlLang = urlParams.get('lang');
+let currentLang = urlLang && I18N[urlLang] ? urlLang : null;
+if (!currentLang) {
+  try { const s = localStorage.getItem('gulliver_lang'); if (I18N[s]) currentLang = s; } catch(e) {}
+}
+if (!currentLang) {
+  currentLang = (navigator.language || '').split('-')[0];
+  if (!I18N[currentLang]) currentLang = 'en';
+}
 
 function applyLang(lang) {
   currentLang = lang;
@@ -878,6 +942,32 @@ themeToggle.addEventListener('click', () => {
 
 /* Apply initial language */
 applyLang(currentLang);
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Gulliver",
+  "headline": "GPS Location Spoofer for iPhone",
+  "operatingSystem": "macOS",
+  "applicationCategory": "UtilitiesApplication",
+  "description": "Spoof your iPhone GPS location from your Mac via USB. No jailbreak required. Mac must stay connected while spoofing. Supports iOS 26.4.",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD",
+    "availability": "https://schema.org/InStock",
+    "description": "Free to download with 10 trial location changes. Optional subscription at $5/month."
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "Gulliver",
+    "url": "https://gulliverapp.top"
+  },
+  "url": "https://gulliverapp.top",
+  "downloadUrl": "https://github.com/Yoddikko/Gulliver/releases/latest"
+}
 </script>
 
 </body>

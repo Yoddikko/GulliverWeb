@@ -4,7 +4,7 @@
   "use strict";
 
   const OWNER = "Yoddikko";
-  const REPO = "Gulliver";
+  const REPO = "GulliverWeb";
 
   function readableSize(bytes) {
     if (!bytes || !Number.isFinite(bytes)) return "";
